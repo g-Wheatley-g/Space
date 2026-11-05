@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Учебный лендинг кофейни «Тёплая чашка»: кофе, выпечка, демонстрационные предложения и форма выбора столика без отправки данных.">
+  <title>Тёплая чашка — учебный лендинг кофейни</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script src="assets/js/main.js" defer></script>
+</head>
+<body id="top">
+  <a class="skip-link" href="#main">Перейти к содержанию</a>
+
+  <!-- Встроенные SVG: изображения не загружаются из сети. -->
+  <svg class="svg-defs" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+    <defs>
+      <symbol id="cup-mark" viewBox="0 0 48 48">
+        <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M9 19h25v11a10 10 0 0 1-10 10h-5A10 10 0 0 1 9 30Z"/>
+          <path d="M34 21h3a6 6 0 0 1 0 12h-4M5 43h34M17 13c-5-5 5-6 0-11M26 13c-5-5 5-6 0-11"/>
+        </g>
+      </symbol>
+      <symbol id="espresso-art" viewBox="0 0 240 180">
+        <ellipse cx="120" cy="149" rx="83" ry="13" fill="#DAC1A6"/>
+        <ellipse cx="115" cy="140" rx="66" ry="12" fill="#F8F1E6" stroke="#793D36" stroke-width="2"/>
+        <path d="M151 81h15c27 0 26 39-5 39h-12" fill="none" stroke="#793D36" stroke-width="9"/>
+        <path d="M73 79h82l-7 42c-3 24-65 24-68 0Z" fill="#793D36"/>
+        <ellipse cx="114" cy="79" rx="41" ry="12" fill="#C48C58" stroke="#793D36" stroke-width="2"/>
+        <ellipse cx="114" cy="79" rx="31" ry="7" fill="#56352A"/>
+        <path d="M103 57c-15-17 14-20 0-38M123 53c-12-13 12-17 4-32" fill="none" stroke="#A37559" stroke-width="2" stroke-linecap="round"/>
+      </symbol>
+      <symbol id="cappuccino-art" viewBox="0 0 240 180">
+        <ellipse cx="119" cy="150" rx="88" ry="13" fill="#CCAD8C"/>
+        <ellipse cx="116" cy="139" rx="77" ry="15" fill="#F8F1E6" stroke="#793D36" stroke-width="2"/>
+        <path d="M166 76h11c29 0 28 40-8 41" fill="none" stroke="#793D36" stroke-width="9"/>
+        <path d="M61 78h107c0 42-17 58-54 58S61 112 61 78Z" fill="#F8F1E6" stroke="#793D36" stroke-width="2"/>
+        <ellipse cx="114" cy="78" rx="54" ry="20" fill="#B77643" stroke="#793D36" stroke-width="2"/>
+        <path d="M114 91c-38-16-22-38 0-20 22-18 38 4 0 20Z" fill="#F8F1E6"/>
+        <path d="m114 89 1-18M98 44c-13-13 12-16 3-29M128 41c-8-11 9-14 3-25" fill="none" stroke="#A37559" stroke-width="2" stroke-linecap="round"/>
+      </symbol>
+      <symbol id="raf-art" viewBox="0 0 240 180">
+        <ellipse cx="122" cy="153" rx="64" ry="12" fill="#D8C1A8"/>
+        <path d="M153 62h12c27 0 28 49-6 49h-9" fill="none" stroke="#793D36" stroke-width="6"/>
+        <path d="M80 54h78l-9 83c-1 17-57 17-59 0Z" fill="#D7AE82" stroke="#793D36" stroke-width="2"/>
+        <path d="m84 81 6 56c2 14 58 15 59 0l7-56" fill="#DFC19C"/>
+        <ellipse cx="119" cy="54" rx="39" ry="12" fill="#FFF9F0" stroke="#793D36" stroke-width="2"/>
+        <path d="M99 51q20-10 40 0M110 32c-10-10 9-13 3-24M71 142l-22-14m5 15 16-16" fill="none" stroke="#793D36" stroke-width="2" stroke-linecap="round"/>
+      </symbol>
+      <symbol id="tea-art" viewBox="0 0 240 180">
+        <ellipse cx="118" cy="151" rx="78" ry="12" fill="#DAC1AE"/>
+        <path d="M161 66h13c30 0 24 52-10 49" fill="none" stroke="#793D36" stroke-width="6"/>
+        <path d="M65 65h99l-8 65c-3 24-77 24-80 0Z" fill="#F3D9C5" stroke="#793D36" stroke-width="2"/>
+        <path d="m70 88 6 42c3 22 77 22 80 0l5-42Z" fill="#A85A55"/>
+        <ellipse cx="115" cy="87" rx="45" ry="12" fill="#793D36"/>
+        <ellipse cx="115" cy="65" rx="49" ry="14" fill="none" stroke="#793D36" stroke-width="2"/>
+        <circle cx="100" cy="87" r="6" fill="#C07A65"/><circle cx="126" cy="83" r="6" fill="#C07A65"/>
+        <path d="M116 49c-14-14 13-18 3-31M45 143q-2-23 20-18-1 19-20 18" fill="none" stroke="#62704A" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="52" cy="149" r="7" fill="#793D36"/>
+      </symbol>
+      <symbol id="cocoa-art" viewBox="0 0 240 180">
+        <ellipse cx="119" cy="151" rx="81" ry="13" fill="#D3B99D"/>
+        <path d="M160 72h12c30 0 29 43-10 43" fill="none" stroke="#793D36" stroke-width="9"/>
+        <path d="M69 67h93v57c0 31-93 31-93 0Z" fill="#C39473" stroke="#793D36" stroke-width="2"/>
+        <ellipse cx="115" cy="67" rx="47" ry="15" fill="#654131" stroke="#793D36" stroke-width="2"/>
+        <g fill="#FFF9F0" stroke="#CFB99F" stroke-width="1.5">
+          <rect x="88" y="56" width="20" height="16" rx="4" transform="rotate(-13 98 64)"/>
+          <rect x="117" y="54" width="21" height="17" rx="4" transform="rotate(16 127 62)"/>
+        </g>
+        <path d="M99 37c-12-12 10-15 3-27M127 37c-10-10 9-13 3-24" fill="none" stroke="#A37559" stroke-width="2" stroke-linecap="round"/>
+      </symbol>
+      <symbol id="bun-art" viewBox="0 0 240 180">
+        <ellipse cx="122" cy="145" rx="90" ry="15" fill="#CBAA86"/>
+        <ellipse cx="119" cy="136" rx="80" ry="18" fill="#F8F1E6" stroke="#793D36" stroke-width="2"/>
+        <path d="M60 99c1-59 111-66 123-2l-5 29c-11 28-112 28-117 0Z" fill="#BD7A47" stroke="#793D36" stroke-width="2"/>
+        <ellipse cx="121" cy="97" rx="61" ry="40" fill="#D9A266" stroke="#793D36" stroke-width="2"/>
+        <path d="M123 95c17-17-22-22-29-4-12 30 63 32 67 0 5-42-86-43-83 4" fill="none" stroke="#793D36" stroke-width="7" stroke-linecap="round"/>
+        <path d="m81 76 72 46M70 97l73 37M107 62l66 42" fill="none" stroke="#FFF0D8" stroke-width="5" stroke-linecap="round"/>
+      </symbol>
+    </defs>
+  </svg>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#top" aria-label="Тёплая чашка — наверх">
+        <svg aria-hidden="true" focusable="false"><use href="#cup-mark"/></svg>
+        <span><span class="brand-name">Тёплая чашка</span><span class="brand-caption">кофе и маленькие радости</span></span>
+      </a>
+      <nav aria-label="Основная навигация">
+        <ul class="nav-list">
+          <li><a href="#menu">Меню</a></li>
+          <li><a href="#offers">Предложения</a></li>
+          <li><a href="#about">О нас</a></li>
+          <li><a class="nav-visit" href="#visit">Заглянуть в гости</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container">
+        <div class="hero-grid">
+          <div>
+            <p class="eyebrow">Место для вашей паузы</p>
+            <h1 id="hero-title">Хороший день начинается с тёплой чашки</h1>
+            <p class="hero-text">Любимый кофе, ароматная выпечка и немного времени для себя. Забегайте между парами или оставайтесь на долгий разговор.</p>
+            <div class="hero-actions">
+              <a class="button" href="#menu">Посмотреть меню <span aria-hidden="true">↗</span></a>
+              <a class="button secondary" href="#visit">Как нас найти</a>
+            </div>
+            <p class="note">Учебный проект. Все цены, акции и контакты на странице — данные макета.</p>
+          </div>
+          <figure class="hero-art">
+            <svg viewBox="0 0 480 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="hero-art-title">
+              <title id="hero-art-title">Бордовая чашка кофе с молочным сердцем и булочка с корицей</title>
+              <path d="M73 112C122 25 296 15 382 100c93 91 64 230-53 270C199 417 22 326 43 215c7-39 14-73 30-103Z" fill="#EBDCC6"/>
+              <path d="M70 317c82 38 247 47 337-7" fill="none" stroke="#C9AD8E" stroke-width="1.5"/>
+              <ellipse cx="233" cy="291" rx="149" ry="32" fill="#D9BE9D"/>
+              <ellipse cx="225" cy="277" rx="145" ry="31" fill="#FFF9F0" stroke="#793D36" stroke-width="2"/>
+              <ellipse cx="225" cy="277" rx="115" ry="21" fill="none" stroke="#C7AD94" stroke-width="1.5"/>
+              <path d="M324 169h27c58 0 51 77-18 77h-13" fill="none" stroke="#793D36" stroke-width="18"/>
+              <path d="M123 165h205l-8 74c-5 59-176 59-188 0Z" fill="#793D36"/>
+              <path d="m142 192 6 42c2 10 7 17 14 22" fill="none" stroke="#AE776A" stroke-width="4" stroke-linecap="round"/>
+              <ellipse cx="225" cy="165" rx="103" ry="35" fill="#F8F1E6" stroke="#793D36" stroke-width="3"/>
+              <ellipse cx="225" cy="165" rx="90" ry="27" fill="#B87B47"/>
+              <path d="M226 184c-65-24-41-54-9-28 27-32 67-8 9 28Z" fill="#FFF3DF"/>
+              <path d="M225 184q-5-16-4-27" fill="none" stroke="#B87B47" stroke-width="2"/>
+              <g fill="none" stroke="#793D36" stroke-width="2" stroke-linecap="round">
+                <path d="M192 111c-31-27 28-32 3-60M230 103c-23-23 23-30 8-58M265 112c-18-20 21-24 12-47"/>
+                <path d="m362 99 8-15m-2 24 18-3M94 153l-15-7m12 22-13 5"/>
+              </g>
+              <g transform="translate(245 225) rotate(-12)">
+                <ellipse cx="76" cy="92" rx="72" ry="14" fill="#C8A581"/>
+                <path d="M20 53c0-44 100-50 111-4l-5 29C118 101 26 101 21 80Z" fill="#BD7A47" stroke="#793D36" stroke-width="2"/>
+                <ellipse cx="76" cy="52" rx="56" ry="35" fill="#D9A266" stroke="#793D36" stroke-width="2"/>
+                <path d="M76 50c17-14-21-22-27-3-9 27 57 26 59 0 2-35-71-36-70 1" fill="none" stroke="#793D36" stroke-width="6" stroke-linecap="round"/>
+                <path d="m42 30 62 44M29 48l66 35M66 19l51 37" fill="none" stroke="#FFF0D8" stroke-width="4" stroke-linecap="round"/>
+              </g>
+              <g fill="#793D36"><ellipse cx="95" cy="274" rx="6" ry="10" transform="rotate(-30 95 274)"/><ellipse cx="106" cy="298" rx="5" ry="9" transform="rotate(40 106 298)"/></g>
+            </svg>
+            <figcaption>Согреваем простыми вещами</figcaption>
+          </figure>
+        </div>
+        <div class="hero-bottom"><span>Кофе · выпечка · хорошие разговоры</span><span>Ваш маленький перерыв в большом городе</span></div>
+      </div>
+    </section>
+
+    <section class="section menu" id="menu" aria-labelledby="menu-title">
+      <div class="container">
+        <div class="section-heading">
+          <div><p class="eyebrow">Выберите своё настроение</p><h2 id="menu-title">В чашке и рядом</h2></div>
+          <p class="note">Все цены, объёмы и составы приведены для учебного макета.</p>
+        </div>
+        <div class="menu-grid">
+          <article class="menu-card">
+            <div class="menu-picture"><svg aria-hidden="true" focusable="false"><use href="#espresso-art"/></svg></div>
+            <div class="menu-title"><h3>Эспрессо</h3><span class="price">190 ₽</span></div>
+            <p>Насыщенный кофе с нотами тёмного шоколада и плотной пенкой.</p><span class="portion">30 мл</span>
+          </article>
+          <article class="menu-card">
+            <div class="menu-picture"><svg aria-hidden="true" focusable="false"><use href="#cappuccino-art"/></svg></div>
+            <div class="menu-title"><h3>Капучино</h3><span class="price">260 ₽</span></div>
+            <p>Эспрессо, тёплое молоко и воздушная пенка. Классика для уютной паузы.</p><span class="portion">250 мл</span>
+          </article>
+          <article class="menu-card">
+            <div class="menu-picture"><svg aria-hidden="true" focusable="false"><use href="#raf-art"/></svg></div>
+            <div class="menu-title"><h3>Ванильный раф</h3><span class="price">310 ₽</span></div>
+            <p>Мягкий кофе со сливками и ванилью, взбитый в нежную пену.</p><span class="portion">300 мл</span>
+          </article>
+          <article class="menu-card">
+            <div class="menu-picture"><svg aria-hidden="true" focusable="false"><use href="#tea-art"/></svg></div>
+            <div class="menu-title"><h3>Ягодный чай</h3><span class="price">250 ₽</span></div>
+            <p>Согревающий чай со смородиной, малиной и лёгкой кислинкой.</p><span class="portion">350 мл</span>
+          </article>
+          <article class="menu-card">
+            <div class="menu-picture"><svg aria-hidden="true" focusable="false"><use href="#cocoa-art"/></svg></div>
+            <div class="menu-title"><h3>Какао</h3><span class="price">270 ₽</span></div>
+            <p>Густой шоколадный напиток на молоке с маленькими маршмеллоу.</p><span class="portion">300 мл</span>
+          </article>
+          <article class="menu-card">
+            <div class="menu-picture"><svg aria-hidden="true" focusable="false"><use href="#bun-art"/></svg></div>
+            <div class="menu-title"><h3>Булочка с корицей</h3><span class="price">220 ₽</span></div>
+            <p>Мягкое сдобное тесто, ароматная корица и тонкая сахарная глазурь.</p><span class="portion">120 г</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="offers" aria-labelledby="offers-title">
+      <div class="container">
+        <div class="section-heading"><div><p class="eyebrow">Поводов заглянуть больше</p><h2 id="offers-title">Маленькие приятности</h2></div><p class="note">Демонстрационные акции учебного макета.</p></div>
+        <div class="offers-grid">
+          <article class="offer"><span class="offer-number">01 / доброе утро</span><span class="offer-value">390 ₽</span><h3>Утренний комплект</h3><p>Капучино и булочка с корицей с 08:00 до 11:00 — для неспешного начала дня.</p></article>
+          <article class="offer"><span class="offer-number">02 / своя привычка</span><span class="offer-value">−10%</span><h3>Со своей кружкой</h3><p>Любимый напиток в вашей многоразовой кружке — ещё один приятный ритуал.</p></article>
+          <article class="offer"><span class="offer-number">03 / между парами</span><span class="offer-value">−10%</span><h3>Для студентов</h3><p>Скидка на меню при предъявлении студенческого билета. Перерыв тоже важен.</p></article>
+          <article class="offer"><span class="offer-number">04 / любимым гостям</span><span class="offer-value">6-й</span><h3>Капучино в подарок</h3><p>После пяти капучино следующий — за наш счёт. Так выглядит дружба в чашках.</p></article>
+        </div>
+        <p class="note offers-note">Цены и условия вымышлены для демонстрации. Акции не действуют и не создают права на скидку или подарок.</p>
+      </div>
+    </section>
+
+    <section class="section about" id="about" aria-labelledby="about-title">
+      <div class="container about-grid">
+        <div><p class="eyebrow">Немного о нас</p><h2 id="about-title">У каждого дня<br>есть тёплая сторона</h2><p class="about-copy">«Тёплая чашка» — учебная концепция небольшой городской кофейни. Мы представили место, где удобно собраться с мыслями после лекций, встретиться с другом или обсудить новую идею за кофе.</p></div>
+        <ul class="benefits">
+          <li><span class="benefit-icon" aria-hidden="true">1</span><div><h3>Кофе по настроению</h3><p>От крепкого эспрессо до нежного рафа — понятное меню с любимыми вкусами.</p></div></li>
+          <li><span class="benefit-icon" aria-hidden="true">2</span><div><h3>Место для разговора</h3><p>Спокойная обстановка и уютные столики для встреч и маленьких перерывов.</p></div></li>
+          <li><span class="benefit-icon" aria-hidden="true">3</span><div><h3>Радость в простом</h3><p>Ароматная выпечка, тёплый свет и внимание к деталям — основа нашей идеи.</p></div></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" id="visit" aria-labelledby="visit-title">
+      <div class="container visit-grid">
+        <div>
+          <p class="eyebrow">Увидимся за чашкой?</p><h2 id="visit-title">Заглянуть в гости</h2>
+          <p class="intro">В нашем макете всегда есть место для хорошей компании и любимого напитка.</p>
+          <address class="contact-list">
+            <div><span class="contact-label">Адрес для макета</span><span class="contact-value">Санкт-Петербург,<br>ул. Учебная, 8</span></div>
+            <div><span class="contact-label">Время работы для макета</span><span class="contact-value">Ежедневно, 08:00–21:00</span></div>
+            <div><span class="contact-label">Email для макета</span><a class="contact-value" href="mailto:hello@example.com">hello@example.com</a></div>
+          </address>
+          <p class="note">Контакты вымышлены и приведены для учебного проекта.</p>
+          <svg class="contact-art" viewBox="0 0 300 145" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+            <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M16 133h266M42 133V50h209v83M35 50l13-32h196l14 32Z"/>
+              <path d="M64 133V74h56v59M141 74h87v42h-87ZM92 105v10M152 18l3 32M91 18l-6 32M207 18l12 32M182 74v42"/>
+              <path d="M28 133v-28m0 11c-25-7-21-27-10-24m10 14c23-14 29 0 0 16M269 133v-27m0 9c-20-3-16-23-5-20m5 13c22-13 26 7 0 14"/>
+            </g>
+            <path d="M36 50h222v6c-7 17-21 15-28 0-7 15-22 15-29 0-7 15-22 15-29 0-7 15-22 15-29 0-7 15-22 15-29 0-7 15-22 15-29 0-7 15-22 15-29 0-7 15-18 15-20 0Z" fill="#793D36"/>
+          </svg>
+        </div>
+        <form class="form-panel" id="visit-form" novalidate autocomplete="off" aria-labelledby="form-title" aria-describedby="form-description form-hint">
+          <h3 id="form-title">Выберите столик</h3>
+          <p class="note" id="form-description">Попробуйте заполнить форму. Это демонстрация: проверка проходит только в браузере, данные не отправляются и не сохраняются сайтом, бронирования нет.</p>
+          <div class="form-grid">
+            <div class="field field-wide">
+              <label for="guest-name">Имя (обязательно)</label>
+              <input id="guest-name" type="text" required maxlength="80" placeholder="Как к вам обращаться?" aria-describedby="name-error">
+              <small class="field-error" id="name-error"></small>
+            </div>
+            <div class="field field-wide">
+              <label for="guest-email">Email (обязательно)</label>
+              <input id="guest-email" type="email" required maxlength="254" placeholder="name@example.com" spellcheck="false" autocapitalize="none" aria-describedby="email-error">
+              <small class="field-error" id="email-error"></small>
+            </div>
+            <div class="field">
+              <label for="visit-date">Дата (обязательно)</label>
+              <input id="visit-date" type="date" required aria-describedby="date-hint date-error">
+              <small class="field-error" id="date-error"></small>
+              <span class="note" id="date-hint">Сегодня или позднее.</span>
+            </div>
+            <div class="field">
+              <label for="guest-count">Число гостей (обязательно)</label>
+              <select id="guest-count" required aria-describedby="count-error">
+                <option value="">Выберите</option>
+                <option value="1">1 гость</option><option value="2">2 гостя</option>
+                <option value="3">3 гостя</option><option value="4">4 гостя</option>
+                <option value="5">5 гостей</option><option value="6">6 гостей</option>
+                <option value="7">7 гостей</option><option value="8">8 гостей</option>
+              </select>
+              <small class="field-error" id="count-error"></small>
+            </div>
+          </div>
+          <p class="note form-hint" id="form-hint">Все поля обязательны. Для проверки можно использовать вымышленные имя и email.</p>
+          <button class="button" id="check-button" type="submit" disabled>Проверить выбор столика <span aria-hidden="true">↗</span></button>
+          <div class="form-result" id="form-result" role="status" aria-live="polite" aria-atomic="true" tabindex="-1"></div>
+          <noscript><p>Для проверки формы включите JavaScript. Данные не отправлены, бронирования нет.</p></noscript>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div><span class="footer-name">Тёплая чашка</span><p class="note">Учебный проект · 2026</p></div>
+      <p class="footer-author">Автор: ФИО СТУДЕНТА</p>
+      <a class="back-top" href="#top">Наверх <span aria-hidden="true">↑</span></a>
+    </div>
+  </footer>
+
+</body>
+</html>
